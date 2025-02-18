@@ -66,6 +66,39 @@ public class Metodos {
 
     }
     
+    public static int menuUsuario() {
+        int opcion;
+        do {
+            System.out.println();
+            System.out.println("1. Pedir una petición");
+            System.out.println("2. Ver mis peticiones");
+            System.out.print("Introduce una opcion: ");
+            Scanner teclado = new Scanner(System.in);
+            opcion = teclado.nextInt();
+            teclado.nextLine();
+            if(opcion > 2 || opcion < 1){
+                System.out.println("Opcion no encontrada.");
+            }
+        } while (opcion > 2 || opcion < 1);
+        return opcion;
+
+    }
+    
+    public static boolean escribirPeticion (){
+        boolean correcto = false; 
+        Scanner teclado = new Scanner (System.in);
+        String pet;
+        pet = teclado.nextLine();
+        
+        for(int i = 0; i<peticiones.length; i++){
+            if(peticiones[i] == null){
+                peticiones[i] = pet; 
+                correcto = true; 
+            }
+        }
+        return correcto; 
+    }
+    
     public static void imprimirPeticiones(){
         int contador = 1;
         for (int i = 0; i<peticiones.length;i++){
