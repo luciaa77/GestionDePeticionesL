@@ -91,5 +91,9 @@ public class Metodos {
             System.out.println("No hay peticiones");
         }
     }
+    
+    public static void eliminarRama(int rama){
+        
+    }
 
 }
