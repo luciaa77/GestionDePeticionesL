@@ -4,6 +4,8 @@
  */
 package gestiónpeticiones;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Etien & Ivan
@@ -15,9 +17,13 @@ public class GestiónPeticiones {
      */
     public static void main(String[] args) {
         int rol; 
-
+        String user; 
         do{
-            rol = modelo.Metodos.login();
+            while(true){
+                Scanner sc = new Scanner(System.in);
+            System.out.print("Introduce el nombre de usuario: ");
+            user = sc.nextLine();
+            rol = modelo.Metodos.login(user);
             if(rol == 0){
                 System.out.println("Usuario o contraseña invalido");                  
             }else if(rol == 1){
@@ -29,7 +35,7 @@ public class GestiónPeticiones {
                 
                 if(opu == 1){
                     System.out.println();
-                    boolean correcto = modelo.Metodos.escribirPeticion();
+                    boolean correcto = modelo.Metodos.escribirPeticion(user);
                     if(correcto){
                         System.out.println("Peticion insertada correctamente");
                     }else{
@@ -54,6 +60,7 @@ public class GestiónPeticiones {
                     modelo.Metodos.eliminarPeticion();
                 }
                 
+            }
             }
         }while(rol == 0);
     }

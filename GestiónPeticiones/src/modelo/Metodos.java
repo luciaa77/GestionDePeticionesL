@@ -13,11 +13,12 @@ import java.util.Scanner;
 public class Metodos {
     
     public static String[] peticiones = new String[100]; 
+    public static String[] peticionesUser = new String[100]; 
 
     //Funcion login, devuelve 0 si contraseña o user sonn incorrectos
     //Devuelve 1 si accedes como usuario normal
     //Devuelve 2 si accedemos como administrador.
-    public static int login() {
+    public static int login(String user) {
         int rol = 0;
         Scanner sc = new Scanner(System.in);
         String usuario_administrador = "lucia@";
@@ -25,8 +26,8 @@ public class Metodos {
         String usuarioInicial = "adrian3";
         String contraseñaInicial = "adios456";
 
-        System.out.print("Nombre de usuario: ");
-        String usuario = sc.nextLine();
+        
+        String usuario = user; 
         if (usuario.equals(usuario_administrador)) {
             System.out.print("password: ");
             String password = sc.nextLine();
@@ -70,7 +71,7 @@ public class Metodos {
         int opcion;
         do {
             System.out.println();
-            System.out.println("1. Pedir una petición");
+            System.out.println("1. Insertar una petición");
             System.out.println("2. Ver mis peticiones");
             System.out.print("Introduce una opcion: ");
             Scanner teclado = new Scanner(System.in);
@@ -84,15 +85,17 @@ public class Metodos {
 
     }
     
-    public static boolean escribirPeticion (){
+    public static boolean escribirPeticion (String user){
         boolean correcto = false; 
         Scanner teclado = new Scanner (System.in);
         String pet;
+        System.out.print("Introduce la peticion: ");
         pet = teclado.nextLine();
         
         for(int i = 0; i<peticiones.length; i++){
             if(peticiones[i] == null){
                 peticiones[i] = pet; 
+                peticionesUser[i] = user; 
                 correcto = true; 
             }
         }
