@@ -91,5 +91,14 @@ public class Metodos {
             System.out.println("No hay peticiones");
         }
     }
+    
+    public static void eliminarPeticion(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Que peticion quieres borrar?");
+        int posicion = sc.nextInt();
+        sc.nextLine();
+        peticiones[posicion] = null;
+        
+    }
 
 }
