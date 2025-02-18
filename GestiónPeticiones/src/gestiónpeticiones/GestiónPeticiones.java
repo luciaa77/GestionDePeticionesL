@@ -34,6 +34,10 @@ public class GestiónPeticiones {
                 }else if(opa == 2){
                     System.out.println();
                     modelo.Metodos.eliminarTodasPeticiones();
+                }else if(opa == 3){
+                    System.out.println();
+                    modelo.Metodos.imprimirPeticiones();
+                    modelo.Metodos.eliminarPeticion();
                 }
                 
             }
