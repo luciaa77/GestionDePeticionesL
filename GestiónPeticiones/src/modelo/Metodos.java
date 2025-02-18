@@ -92,7 +92,9 @@ public class Metodos {
         }
     }
     
-    public static void eliminarRama(int rama){
+    public static void eliminarPeticion(int posicion){
+        
+        peticiones[posicion] = null;
         
     }
 
