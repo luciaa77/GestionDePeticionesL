@@ -41,6 +41,9 @@ public class GestiónPeticiones {
                     }else{
                         System.out.println("Ha ocurrido un error.");
                     }
+                }else if(opu == 2){
+                    System.out.println();
+                    modelo.Metodos.verMisPeticiones(user);
                 }
             }else if (rol == 2){
                 System.out.println("Has accedido como administrador");

@@ -102,6 +102,15 @@ public class Metodos {
         return correcto; 
     }
     
+    public static void verMisPeticiones(String user){
+        int contador = 1;
+        for(int i = 0; i<peticiones.length; i++){
+            if(peticionesUser[i] == user){
+                System.out.println(contador + ". " + peticiones[i]);
+            }
+        }
+    }
+    
     public static void imprimirPeticiones(){
         int contador = 1;
         for (int i = 0; i<peticiones.length;i++){
