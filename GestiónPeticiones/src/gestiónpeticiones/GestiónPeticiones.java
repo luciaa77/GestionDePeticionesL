@@ -22,6 +22,20 @@ public class GestiónPeticiones {
                 System.out.println("Usuario o contraseña invalido");                  
             }else if(rol == 1){
                 System.out.println("Has accedido como usuario");
+                System.out.println();
+                System.out.println("___________________________");
+                
+                int opu = modelo.Metodos.menuUsuario();
+                
+                if(opu == 1){
+                    System.out.println();
+                    boolean correcto = modelo.Metodos.escribirPeticion();
+                    if(correcto){
+                        System.out.println("Peticion insertada correctamente");
+                    }else{
+                        System.out.println("Ha ocurrido un error.");
+                    }
+                }
             }else if (rol == 2){
                 System.out.println("Has accedido como administrador");
                 System.out.println();
