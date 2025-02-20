@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package gestiónpeticiones;
 
 import java.util.Scanner;
@@ -31,7 +27,7 @@ public class GestiónPeticiones {
                 } else if (rol == 1) {
                     System.out.println("");
                     System.out.println("");
-                    System.out.println("Has accedido como usuario");
+                    System.out.println("Has accedido como usuario de CarConnect");
                     System.out.println();
                     System.out.println("___________________________");
 
@@ -64,7 +60,7 @@ public class GestiónPeticiones {
                 } else if (rol == 2) {
                     System.out.println("");
                     System.out.println("");
-                    System.out.println("Has accedido como administrador");
+                    System.out.println("Has accedido como administrador de CarConnect");
                     System.out.println();
                     System.out.println("___________________________");
 

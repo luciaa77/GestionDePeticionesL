@@ -22,13 +22,13 @@ public class Metodos {
         int rol = 0;
         Scanner sc = new Scanner(System.in);
         String usuario_administrador = "lucia@";
-        String contraseña_administrador = "holaque123";
-        String usuarioInicial = "adrian3";
-        String contraseñaInicial = "adios456";
-        String u1 = "adrian1";
-        String c1 = "adios456";
-        String u2 = "adrian2";
-        String c2 = "adios456";
+        String contraseña_administrador = "hola1";
+        String usuarioInicial = "user1";
+        String contraseñaInicial = "adios1";
+        String u1 = "user2";
+        String c1 = "adios1";
+        String u2 = "user3";
+        String c2 = "adios3";
 
         String usuario = user;
         if (usuario.equals(usuario_administrador)) {
@@ -68,6 +68,9 @@ public class Metodos {
         int opcion;
         do {
             System.out.println();
+            System.out.println("");
+            System.out.println("********MENU CARCONNECT ADMINISTRADOR******");
+            System.out.println("");
             System.out.println("1. Ver todas las peticiones");
             System.out.println("2. Eliminar todas las peticiones");
             System.out.println("3. Eliminar una peticion");
@@ -94,6 +97,9 @@ public class Metodos {
         int opcion;
         do {
             System.out.println();
+            System.out.println("");
+            System.out.println("********MENU CARCONNECT ADMINISTRADOR******");
+            System.out.println("");
             System.out.println("1. Insertar una petición");
             System.out.println("2. Ver mis peticiones");
             System.out.println("3. Cerrar Sesion");
@@ -124,11 +130,17 @@ public class Metodos {
 
     }
 
+    /**
+     * metodo para escribir una petición
+     *
+     * @param user
+     * @return
+     */
     public static boolean escribirPeticion(String user) {
         boolean correcto = false;
         Scanner teclado = new Scanner(System.in);
         String pet;
-        System.out.print("Introduce la peticion: ");
+        System.out.print("Introduce la peticion que desea para CarConnect: ");
         pet = teclado.nextLine();
         int contador = 0;
         for (int i = 0; i < peticiones.length; i++) {
@@ -145,6 +157,11 @@ public class Metodos {
         return correcto;
     }
 
+    /**
+     * metodo para ver mis peticiones
+     *
+     * @param user
+     */
     public static void verMisPeticiones(String user) {
         int c = 0;
         for (int i = 0; i < peticiones.length; i++) {
@@ -153,7 +170,7 @@ public class Metodos {
             }
         }
         if (c != 0) {
-            System.out.println("Tus peticiones");
+            System.out.println("Tus peticiones de CarConnect");
             for (int i = 0; i < peticiones.length; i++) {
                 if (peticionesUser[i] == user) {
                     System.out.println((i + 1) + ". " + peticiones[i]);
@@ -164,6 +181,9 @@ public class Metodos {
         }
     }
 
+    /**
+     * metodo para imprimir las peticiones
+     */
     public static void imprimirPeticiones() {
         int contador = 1;
         for (int i = 0; i < peticiones.length; i++) {
@@ -177,6 +197,9 @@ public class Metodos {
         }
     }
 
+    /**
+     * metodo para poder eliminar todas las peticiones
+     */
     public static void eliminarTodasPeticiones() {
         int contador = 1;
         for (int i = 0; i < peticiones.length; i++) {
@@ -191,6 +214,9 @@ public class Metodos {
         }
     }
 
+    /**
+     * metodo poara poder eliminar una peticion
+     */
     public static void eliminarPeticion() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Que peticion quieres borrar?");
