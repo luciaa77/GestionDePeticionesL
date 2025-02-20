@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <style>
+        .cuerpo {
+            background-color: rgb(226, 201, 201);
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="cuerpo">
+    <form action="mailto: luciacuadradojimenez7@gmail.com" method="post" enctype="text/plain">
+        <fieldset>
+            <legend>Formulario</legend>
+            <p>Nombre: <input type="text" name="nombre" size="30"></p>
+            <p>Apellidos: <input type="text" name="apellidos" size="40"></p>
+            <p>F. Nacimiento: <input type="date" name="fecha_nacimiento" size="10"></p>
+            <p>Teléfono: <input type="tel" name="telefono" size="9"></p>
+            <p>
+                ¿A cuál de los eventos has asistido?:<br>
+                <input type="checkbox" name="contaminacion[]" value="atmosferica"> Evento de Madrid
+                <input type="checkbox" name="contaminacion[]" value="acustica"> Evento de Barcelona
+                <input type="checkbox" name="contaminacion[]" value="luminica"> Evento de Valencia
+                <input type="checkbox" name="contaminacion[]" value="hidrica"> Evento de Galicia
+               
+            </p>
+            <p>
+                Como encontraste mi página:
+                <select name="donde">
+                    <option value="casualidad">De casualidad</option>
+                    <option value="comentaron">Me la comentaron</option>
+                </select>
+            </p>
+            <p>
+                ¿Cómo crees que podrías hacer llegar esta página a más gente?:<br>
+                <textarea name="comentario" rows="5" cols="40"></textarea>
+            </p>
+            <p>
+                <input type="submit" value="Enviar datos">
+                <input type="reset" value="Borrar datos">
+            </p>
+        </fieldset>
+    </form>
+    <br><a href="proyectoConcesionario.html"><input type="button" value="Volver"></a><br>
+</body>
+</html>
