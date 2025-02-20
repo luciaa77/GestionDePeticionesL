@@ -18,7 +18,8 @@ public class GestiónPeticiones {
     public static void main(String[] args) {
         int rol = -1; 
         String user = null; 
-        while(true){
+        boolean terminado = true; 
+        while(terminado){
             do{
             
             if(user == null){
@@ -53,7 +54,7 @@ public class GestiónPeticiones {
                     System.out.println("Has cerrado sesion...");
                     System.out.println();
                 }else if(opu == 4){
-                    break;
+                    terminado = false;
                 }else if(opu == 5){
                     System.out.println();
                     modelo.Metodos.verMisPeticiones(user);
@@ -82,7 +83,7 @@ public class GestiónPeticiones {
                     System.out.println("Has cerrado sesion...");
                     System.out.println();
                 }else if(opa == 5){
-                    break;
+                    terminado = false;
                 }
                 
             }
