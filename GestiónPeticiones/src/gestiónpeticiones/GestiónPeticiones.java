@@ -16,14 +16,17 @@ public class GestiónPeticiones {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int rol; 
-        String user; 
-        do{
-            while(true){
+        int rol = -1; 
+        String user = null; 
+        while(true){
+            do{
+            
+            if(user == null){
                 Scanner sc = new Scanner(System.in);
-            System.out.print("Introduce el nombre de usuario: ");
-            user = sc.nextLine();
-            rol = modelo.Metodos.login(user);
+                System.out.print("Introduce el nombre de usuario: ");
+                user = sc.nextLine();
+                rol = modelo.Metodos.login(user);
+            }
             if(rol == 0){
                 System.out.println("Usuario o contraseña invalido");                  
             }else if(rol == 1){
@@ -44,7 +47,19 @@ public class GestiónPeticiones {
                 }else if(opu == 2){
                     System.out.println();
                     modelo.Metodos.verMisPeticiones(user);
+                }else if(opu == 3){
+                    user = null;
+                    rol = 0;
+                    System.out.println("Has cerrado sesion...");
+                    System.out.println();
+                }else if(opu == 4){
+                    break;
+                }else if(opu == 5){
+                    System.out.println();
+                    modelo.Metodos.verMisPeticiones(user);
+                    modelo.Metodos.eliminarPeticionPropia();
                 }
+            
             }else if (rol == 2){
                 System.out.println("Has accedido como administrador");
                 System.out.println();
@@ -61,11 +76,19 @@ public class GestiónPeticiones {
                     System.out.println();
                     modelo.Metodos.imprimirPeticiones();
                     modelo.Metodos.eliminarPeticion();
+                }else if(opa == 4){
+                    user = null;
+                    rol = 0;
+                    System.out.println("Has cerrado sesion...");
+                    System.out.println();
+                }else if(opa == 5){
+                    break;
                 }
                 
             }
-            }
+            
         }while(rol == 0);
+        }
     }
     
 }
